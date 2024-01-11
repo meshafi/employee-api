@@ -61,8 +61,7 @@ Make sure you have the following installed:
 ```
 /app/__init__.py
 ```
-'mongodb://localhost:27017/EmployeeDB' 
- Replace 'EmployeeDB' with your database name
+'mongodb://localhost:27017/EmployeeDB'. Replace 'EmployeeDB' with your database name
 
 3. Run the Flask application:
 
