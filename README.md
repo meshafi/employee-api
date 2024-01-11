@@ -57,13 +57,20 @@ Make sure you have the following installed:
 
 1. Ensure your virtual environment is activated (If you are using virtual environment).
 
-2. Run the Flask application:
+2.Make sure to make changes according to user mongoDB database name 
+```
+/app/__init__.py
+```
+'mongodb://localhost:27017/EmployeeDB'
+Replace EmployeeDB with your database name
+
+3. Run the Flask application:
 
     ```bash
     python3 run.py
     ```
 
-3. Open your web browser and navigate to [http://localhost:5000](http://localhost:5000).
+4. Open your web browser and navigate to [http://localhost:5000](http://localhost:5000).
 
 ## API Endpoints
 
