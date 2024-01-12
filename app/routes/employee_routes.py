@@ -7,10 +7,29 @@ from app.services.employee_service import EmployeeService
 employee_service = EmployeeService(mongo)
 employee_schema = EmployeeSchema()  
 
+# @app.route('/api/employees', methods=['GET'])
+# def get_employees():
+#     employees = employee_service.get_employees()
+#     return jsonify(employees)
+
 @app.route('/api/employees', methods=['GET'])
 def get_employees():
-    employees = employee_service.get_employees()
-    return jsonify(employees)
+    page = int(request.args.get('page', 1))
+    per_page = int(request.args.get('per_page', 10))
+
+    employees = employee_service.get_employees(page, per_page)
+
+    total_count = employee_service.get_total_count()  
+
+    if employees:
+        return jsonify({
+            'items': employee_schema.dump(employees, many=True),
+            'page': page,
+            'per_page': per_page,
+            'total_count': total_count,
+        })
+    else:
+        return jsonify({'error': 'No employees found'}), 404
 
 
 @app.route('/api/employees/<string:emp_id>', methods=['GET'])
@@ -20,6 +39,7 @@ def get_employee(emp_id):
         return jsonify(emp)
     else:
         return jsonify({'error': 'Employee not found'}), 404
+
     
 
 @app.route('/api/employees', methods=['POST'])
