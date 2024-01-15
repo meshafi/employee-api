@@ -1,7 +1,7 @@
 from marshmallow import Schema, fields, validate
 
 class EmployeeSchema(Schema):
-    _id = fields.String(attribute='_id', dump_only=True)  # Assuming '_id' is the field in your documents
+    _id = fields.String(attribute='_id', dump_only=True)  
     name = fields.String(required=True)
     position = fields.String(required=True)
     department = fields.String(required=True)
