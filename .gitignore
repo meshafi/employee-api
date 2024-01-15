@@ -1,0 +1,17 @@
+app/__pycache__/
+app/schema/__pycache__/
+app/routes/__pycache__/
+app/services/__pycache__/
+
+app/*.pyc
+app/*.pyo
+app/*.pyd
+app/schema/*.pyc
+app/schema/*.pyo
+app/schema/*.pyd
+app/routes/*.pyc
+app/routes/*.pyo
+app/routes/*.pyd
+app/services/*.pyc
+app/services/*.pyo
+app/services/*.pyd
